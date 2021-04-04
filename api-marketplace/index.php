@@ -1,8 +1,5 @@
 <?php
-    $json = array (
-        'status' => 200,
-        'result' => "Success"
-    );
-    echo json_encode($json);
-    return;
- ?>
+
+require_once "controllers/route.controller.php";
+$index = new RoutesController(); //Instancio todo RoutesController
+$index -> index(); //Ejecuto el index()
