@@ -15,13 +15,72 @@
         );
     }else{
 
-        $json = array (
-            'status' => 200,
-            'result' => $routesArray[1]
-        );
+        /*==============================================
+        PETICIONES GET
+        ===============================================*/
+
+        if (count($routesArray) == 1 &&
+             isset($_SERVER["REQUEST_METHOD"]) && 
+             $_SERVER["REQUEST_METHOD"] == "GET"){
+
+                $json = array (
+                    'status' => 200,
+                    'result' => "GET"
+                );
+        
+            echo json_encode($json,http_response_code($json["status"]));
+            return;
+        }
+
+        /*==============================================
+        PETICIONES POST
+        ===============================================*/
+        if (count($routesArray) == 1 &&
+             isset($_SERVER["REQUEST_METHOD"]) && 
+             $_SERVER["REQUEST_METHOD"] == "POST"){
+
+                $json = array (
+                    'status' => 200,
+                    'result' => "POST"
+                );
+            echo json_encode($json,http_response_code($json["status"]));
+            return;
+        }
+
+        /*==============================================
+        PETICIONES PUT
+        ===============================================*/
+        if (count($routesArray) == 1 &&
+             isset($_SERVER["REQUEST_METHOD"]) && 
+             $_SERVER["REQUEST_METHOD"] == "PUT"){
+
+                $json = array (
+                    'status' => 200,
+                    'result' => "PUT"
+                );
+            echo json_encode($json,http_response_code($json["status"]));
+            return;
+        }
+
+        /*==============================================
+        PETICIONES DELETE
+        ===============================================*/
+        if (count($routesArray) == 1 &&
+             isset($_SERVER["REQUEST_METHOD"]) && 
+             $_SERVER["REQUEST_METHOD"] == "DELETE"){
+
+                $json = array (
+                    'status' => 200,
+                    'result' => "DELETE"
+                );
+            echo json_encode($json,http_response_code($json["status"]));
+            return;
+        }
+        
+            
     }
+    
 
-    echo json_encode($json,http_response_code($json["status"]));
 
-    return;
+        
  ?>
