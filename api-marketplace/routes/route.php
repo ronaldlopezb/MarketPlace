@@ -37,6 +37,14 @@
                 $response = new GetController();
                 $response -> getFilterData(explode("?", $routesArray[1])[0], $_GET["linkTo"], $_GET["equalTo"]);
 
+            /*========================================
+            Peticiones GET entre tablas relacionadas sin Filtro
+            ===========================================*/
+            }else if (isset($_GET["rel"]) && isset($_GET["type"]) && explode("?", $routesArray[1])[0] == "relations"){
+
+                $response = new GetController();
+                $response -> getRelData( $_GET["rel"], $_GET["type"]);
+            
             }else{
 
                 /*========================================
