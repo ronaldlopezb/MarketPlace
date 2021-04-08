@@ -23,13 +23,8 @@
              isset($_SERVER["REQUEST_METHOD"]) && 
              $_SERVER["REQUEST_METHOD"] == "GET"){
 
-                $json = array (
-                    'status' => 200,
-                    'result' => "GET"
-                );
-        
-            echo json_encode($json,http_response_code($json["status"]));
-            return;
+            $response = new GetController();
+            $response -> getData($routesArray[1]);
         }
 
         /*==============================================
